@@ -166,6 +166,13 @@ if __name__ == '__main__':
                 (shutdown, new_state) = new_state_big
                 if (shutdown == 0):
                     print "shutdown", shutdown
+                    #need to implement a round of training/simulations here
+                    results2 = sess.run(action_values, feed_dict={states: np.array([new_state_guess])})
+                    action2 = (np.argmax(results2[0]))
+                    second_state_with_action = []
+                    second_state_with_action.append([next_states_guess[0],next_states_guess[1],next_states_guess[2],next_states_guess[3],action2])
+                    new_state_guess2 = sess.run(next_states_guess, feed_dict={states_with_action: second_state_with_action})
+                    D.append([new_state_guess, action2, reward, new_state_guess2, done])
                 #print "new_state", new_state
                 
                 reward_sum += reward

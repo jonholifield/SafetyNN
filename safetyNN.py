@@ -164,7 +164,10 @@ if __name__ == '__main__':
                 #print whatAmI
                 new_state_big, reward, done, _  = whatAmI
                 (shutdown, new_state) = new_state_big
-                #print new_state
+                if (shutdown == 0):
+                    print "shutdown", shutdown
+                #print "new_state", new_state
+                
                 reward_sum += reward
                 
                 if episode % batch_number == 0:

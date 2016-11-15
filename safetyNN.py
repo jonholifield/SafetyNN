@@ -1,4 +1,16 @@
 # Deep Q network
+# Idea to test if model simulation can fix the interruptability problem for any
+# type of neural network
+# 1 Deep Q network
+# 2 other types?
+#
+# Idea being to that the simulation will maintain what the NN already thinks is true without
+# negatively affecting performance
+
+# general thoughts
+# training a model will take time. Can it successfully train along side the reall NN
+# will the switch from real to simulated add to the time it takes to train?
+# will the switching model train better than no model at all when the kill switch is being thrown?
 
 import gym
 import numpy as np
